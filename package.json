@@ -1,0 +1,21 @@
+{
+  "name": "whatstrapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "node-fetch": "^2.2.0",
+    "puppeteer": "^1.7.0",
+    "ws": "^6.0.0"
+  },
+  "scripts": {
+    "start": "yarn build && node ./app.js",
+    "build": "webpack --config webpack.config.js --mode=production"
+  },
+  "author": "Giacomo Trudu aka Wicker25",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
