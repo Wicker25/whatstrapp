@@ -163,7 +163,7 @@ class AnalyzerScript {
  */
 export default class Puppet {
     constructor() {
-        this._client = new window.WebSocket('ws://127.0.0.1:8080/');
+        this._client = new window.WebSocket('ws://127.0.0.1:8085/');
         this._state = null;
     }
 

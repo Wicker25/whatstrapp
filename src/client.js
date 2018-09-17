@@ -26,7 +26,7 @@ class Client {
     }
 
     connect() {
-        this._client = new window.WebSocket(`ws://${location.hostname}:8080/`);
+        this._client = new window.WebSocket(`ws://${location.hostname}:8085/`);
         this._client.addEventListener('open', () => {
             this._showMessage('Connected');
 
