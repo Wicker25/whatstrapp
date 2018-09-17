@@ -26,3 +26,7 @@ $ yarn start
 Then open your browser at http://127.0.0.1:8025/ and wait until the QR code has been loaded.
 
 Launch the target's *WhatsApp* and, from the main menu, select "WhatsApp Web". Finally, take a picture of the QR code and get profit!
+
+## TODOs
+
+- Support for ELK Stack
