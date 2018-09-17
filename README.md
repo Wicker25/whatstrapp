@@ -36,7 +36,7 @@ The *WhatsTrapp*'s architecture consists of a *Puppeteer*, *Puppets*, and *Clien
 ![WhatsTrapp architecture](https://user-images.githubusercontent.com/500733/45647051-d54cd380-babc-11e8-8906-d277456ed211.png)
 
 - The *Puppeteer* launches the browser instance by using [Google Puppeteer](https://github.com/GoogleChrome/puppeteer) and injects a *Puppet* into it;
-- The *Puppet* is a JavaScript that performs many actions in the [WhatsApp Web](https://web.whatsapp.com/) context;
+- The *Puppet* is a JavaScript that performs actions in the [WhatsApp Web](https://web.whatsapp.com/) page;
 - The *Client* is the user interface used by the attacker for performing the hack.
 
 All of the components communicate with each other via *WebSocket*.
