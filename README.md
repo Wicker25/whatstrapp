@@ -29,6 +29,18 @@ Then open your browser at http://127.0.0.1:8025/ and wait until the QR code has 
 
 Launch the target's *WhatsApp* and, from the main menu, select "WhatsApp Web". Finally, take a picture of the QR code and get profit!
 
+## Architecture
+
+The *WhatsTrapp*'s architecture consists of a *Puppeteer*, *Puppets*, and *Clients*:
+
+![WhatsTrapp architecture](https://user-images.githubusercontent.com/500733/45647051-d54cd380-babc-11e8-8906-d277456ed211.png)
+
+- The *Puppeteer* launches the browser instance by using [Google Puppeteer](https://github.com/GoogleChrome/puppeteer) and injects a *Puppet* into it;
+- The *Puppet* is a JavaScript that performs many actions in the [WhatsApp Web](https://web.whatsapp.com/) context;
+- The *Client* is the user interface used by the attacker for performing the hack.
+
+All of the components communicate with each other via *WebSocket*.
+
 ## TODOs
 
 - Support for ELK Stack
