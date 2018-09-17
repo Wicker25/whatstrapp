@@ -1,5 +1,7 @@
 # WhatsTrapp
 
+![WhatsTrapp video](https://media.giphy.com/media/1gQ65LmOcgLwe1XKWl/giphy.gif)
+
 ## Introduction
 *WhatsTrapp* is a tool for analyzing and dumping WhatsApp accounts.
 
