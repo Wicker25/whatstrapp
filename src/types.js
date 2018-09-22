@@ -33,7 +33,12 @@ export class Contact {
 export class Message {
     static parse(payload) {
         const instance = new Message();
-        instance.body = payload.body;
+        instance.id       = payload.id.id;
+        instance.from     = payload.from.user;
+        instance.to       = payload.to.user;
+        instance.body     = payload.body;
+        instance.mimeType = payload.mimetype || 'text/plain';
+        instance.time     = new Date(payload.t * 1000);
 
         return instance;
     }
