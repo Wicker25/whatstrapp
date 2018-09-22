@@ -144,7 +144,7 @@ class AnalyzerScript {
         const response = await Store.Wap.contactFindQuery('search');
         this._contacts = response.data.map(payload => Contact.parse(payload));
 
-        this._puppet.dumpData(this._contacts);
+        this._puppet.storeData('contact', this._contacts);
     }
 
     async _grabMessages() {
@@ -152,7 +152,7 @@ class AnalyzerScript {
             const response = await Store.Wap.msgFindQuery('before', new MessageQuery({ remote: `${contact.id}@c.us` }));
             this._messages[contact.id] = response.map(payload => Message.parse(payload));
 
-            this._puppet.dumpData(this._messages[contact.id]);
+            this._puppet.storeData('message', this._messages[contact.id]);
         });
     }
 }
@@ -192,8 +192,8 @@ export default class Puppet {
         this._send('auth_completed');
     }
 
-    dumpData(data) {
-        this._send('dump_data', data);
+    storeData(type, objects) {
+        this._send('store_data', { type, objects });
     }
 
     debug(data) {

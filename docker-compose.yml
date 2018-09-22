@@ -1,0 +1,12 @@
+version: '3'
+services:
+  elasticsearch:
+    image: elasticsearch
+    environment:
+      - bootstrap.memory_lock=true
+    ports:
+      - 9200:9200
+  kibana:
+    image: kibana
+    ports:
+      - 5601:5601

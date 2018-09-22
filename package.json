@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "elasticsearch": "^15.1.1",
     "lodash": "^4.17.10",
     "node-fetch": "^2.2.0",
     "puppeteer": "^1.7.0",
