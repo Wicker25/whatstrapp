@@ -1,12 +1,10 @@
 version: '3'
 services:
   elasticsearch:
-    image: elasticsearch
-    environment:
-      - bootstrap.memory_lock=true
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
     ports:
       - 9200:9200
   kibana:
-    image: kibana
+    image: docker.elastic.co/kibana/kibana:6.4.1
     ports:
       - 5601:5601
