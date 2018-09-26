@@ -25,17 +25,7 @@ Install all the dependencies for the project:
 $ yarn
 ```
 
-Create the *Elasticsearch* and *Kibana*'s containers:
-```
-$ docker-compose pull
-```
-
 ## Trying it out
-
-Start the *Elasticsearch* and *Kibana*'s containers with:
-```
-$ docker-compose up
-```
 
 Launch the *WhatsTrapp* server with:
 ```
@@ -50,15 +40,13 @@ Finally, take a picture of the QR code and enjoy it!
 
 ## Data Analysis
 
-Launch *Kibana* by opening your browser at http://127.0.0.1:5601/.
+Open *Kibana's Discover* page at http://127.0.0.1:5601/app/kibana#/discover.
 
-Set the *Index Pattern* as `wt-*` and click on "Create" (the pattern is valid only after you collected some data!).
+![Kibana Discover page](https://user-images.githubusercontent.com/500733/46049959-4e859f80-c129-11e8-8bfc-747da987567f.png)
 
-![kibana-create-index](https://user-images.githubusercontent.com/500733/45918766-bd41cf00-be83-11e8-8cfb-c363e6f5fa91.png)
+You can start a new *Search* or open one of the default ones from the menu on the right.
 
-Now you can open the *Discover* page and visualize the collected data.
-
-![kibana-example](https://user-images.githubusercontent.com/500733/45918960-88834700-be86-11e8-963e-0cc0f3660085.png)
+![kibana](https://user-images.githubusercontent.com/500733/46050467-2ea3ab00-c12c-11e8-829d-494af87078ce.png)
 
 ## Architecture
 
