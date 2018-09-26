@@ -1,0 +1,58 @@
+[
+    {
+        "id": "5d7ee610-c11d-11e8-95ac-91aad38120ca",
+        "type": "index-pattern",
+        "version": 1,
+        "attributes": {
+            "title": "wt-*",
+            "timeFieldName": "time",
+            "fields": "[{\"name\":\"_id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"body\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"body.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"from\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"from.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"id\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"id.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"mimeType\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"mimeType.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"name\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"name.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"pushname\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"pushname.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"time\",\"type\":\"date\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"to\",\"type\":\"string\",\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"to.keyword\",\"type\":\"string\",\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true}]"
+        }
+    },
+    {
+        "id": "90617ac0-c11d-11e8-95ac-91aad38120ca",
+        "type": "search",
+        "version": 1,
+        "attributes": {
+            "title": "All Messages - Plain Text",
+            "description": "",
+            "hits": 0,
+            "columns": [
+                "from",
+                "to",
+                "body"
+            ],
+            "sort": [
+                "time",
+                "desc"
+            ],
+            "version": 1,
+            "kibanaSavedObjectMeta": {
+                "searchSourceJSON": "{\"index\":\"5d7ee610-c11d-11e8-95ac-91aad38120ca\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"_type:\\\"message\\\" AND mimeType:\\\"text/plain\\\"\",\"language\":\"lucene\"},\"filter\":[]}"
+            }
+        }
+    },
+    {
+        "id": "a96f82f0-c11d-11e8-95ac-91aad38120ca",
+        "type": "search",
+        "version": 1,
+        "attributes": {
+            "title": "All Messages - JPEG Images",
+            "description": "",
+            "hits": 0,
+            "columns": [
+                "from",
+                "to",
+                "body"
+            ],
+            "sort": [
+                "time",
+                "desc"
+            ],
+            "version": 1,
+            "kibanaSavedObjectMeta": {
+                "searchSourceJSON": "{\"index\":\"5d7ee610-c11d-11e8-95ac-91aad38120ca\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"_type:\\\"message\\\" AND mimeType:\\\"image/jpeg\\\"\",\"language\":\"lucene\"},\"filter\":[]}"
+            }
+        }
+    }
+]

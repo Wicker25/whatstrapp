@@ -10,8 +10,9 @@
     "ws": "^6.0.0"
   },
   "scripts": {
-    "start": "yarn build && node ./app.js",
-    "build": "webpack --config webpack.config.js --mode=production"
+    "start": "yarn build && ./scripts/run-docker.sh && node ./app.js",
+    "build": "webpack --config webpack.config.js --mode=production",
+    "stop": "./scripts/stop-docker.sh"
   },
   "author": "Giacomo Trudu aka Wicker25",
   "license": "MIT",
