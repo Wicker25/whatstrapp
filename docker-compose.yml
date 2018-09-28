@@ -1,10 +1,34 @@
 version: '3'
 services:
+  whatstrapp:
+    image: wicker25/whatstrapp:0.1
+    ports:
+      - 8025:8025
+      - 8085:8085
+    networks:
+      - internal-network
+    environment:
+      ELASTICSEARCH_URL: elasticsearch:9200
+      KIBANA_URL: kibana:5601
+    depends_on:
+      - elasticsearch
+      - kibana
   elasticsearch:
+    hostname: elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
     ports:
       - 9200:9200
+    networks:
+      - internal-network
   kibana:
+    hostname: kibana
     image: docker.elastic.co/kibana/kibana:6.4.1
     ports:
       - 5601:5601
+    networks:
+      - internal-network
+    depends_on:
+      - elasticsearch
+networks:
+  internal-network:
+    driver: bridge

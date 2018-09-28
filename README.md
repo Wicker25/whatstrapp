@@ -7,8 +7,6 @@
 
 ## Requirements
 
-- Node.js >= 8.0
-- Yarn
 - Docker
 - Docker Compose
 
@@ -20,16 +18,11 @@ $ git clone git@github.com:Wicker25/whatstrapp.git
 $ cd whatstrapp/
 ```
 
-Install all the dependencies for the project:
-```
-$ yarn
-```
-
 ## Trying it out
 
 Launch the *WhatsTrapp* server with:
 ```
-$ yarn start
+$ docker-compose up
 ```
 
 Then open your browser at http://127.0.0.1:8025/ and wait until the QR code has been loaded.
