@@ -13,6 +13,9 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
 
 RUN apt-get update && apt-get install -y curl
 
+ADD https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64 /sbin/dumb-init
+RUN chmod +x /sbin/dumb-init
+
 WORKDIR /app
 COPY . .
 RUN ["yarn", "install"]
@@ -20,4 +23,5 @@ RUN ["yarn", "install"]
 EXPOSE 8025
 EXPOSE 8085
 
-ENTRYPOINT ["yarn", "start"]
+ENTRYPOINT ["dumb-init", "--"]
+CMD ["yarn", "start"]
