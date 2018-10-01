@@ -2,7 +2,7 @@
 
 KIBANA_SETTINGS_FILEPATH='settings/kibana-settings.json'
 
-function wait_for_connection {
+function wait_for_it {
     until $(curl -s -o /dev/null --head --fail "$1"); do
         sleep 1
     done
@@ -10,10 +10,10 @@ function wait_for_connection {
 }
 
 echo -n "Waiting for Elasticsearch ... "
-wait_for_connection $ELASTICSEARCH_URL
+wait_for_it $ELASTICSEARCH_URL
 
 echo -n "Waiting for Kibana ... "
-wait_for_connection $KIBANA_URL
+wait_for_it $KIBANA_URL
 
 echo -n "Loading Kibana's settings ... "
 curl \

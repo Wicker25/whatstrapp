@@ -1,0 +1,29 @@
+language: bash
+
+addons:
+  apt:
+    packages:
+      - realpath
+
+install:
+  - docker build .
+  - docker-compose pull
+
+before_script:
+  - curl -L 'https://github.com/vishnubob/wait-for-it/blob/master/wait-for-it.sh?raw=true' -o .travis/wait-for-it.sh
+  - chmod +x .travis/wait-for-it.sh
+
+script:
+  - docker-compose up -d
+  - .travis/wait-for-it.sh --timeout=120 127.0.0.1:8025
+  - .travis/wait-for-it.sh --timeout=120 127.0.0.1:5601
+
+after_script:
+  - docker-compose stop
+  - docker-compose rm -f
+
+deploy:
+  provider: script
+  script: .travis/docker_push.sh
+  on:
+    branch: master

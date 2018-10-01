@@ -1,5 +1,7 @@
 # WhatsTrapp
 
+[![Build Status](https://travis-ci.org/Wicker25/whatstrapp.svg?branch=master)](https://travis-ci.org/Wicker25/whatstrapp)
+
 ![WhatsTrapp video](https://media.giphy.com/media/1gQ65LmOcgLwe1XKWl/giphy.gif)
 
 ## Introduction
