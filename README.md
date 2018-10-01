@@ -5,14 +5,24 @@
 ![WhatsTrapp video](https://media.giphy.com/media/1gQ65LmOcgLwe1XKWl/giphy.gif)
 
 ## Introduction
+
 *WhatsTrapp* is a tool for analyzing and dumping WhatsApp accounts.
+
+## How it works
+
+*WhatsTrapp* uses a *Man In the Middle* (MITM) attack to establish a session with the WhatsApp's target: once the session
+has been established, actions for retrieving and collecting the data are executed in the browser context by using the
+very same *WhatsApp Web's APIs* (thank to a bit of reverse engineering).
+
+Finally, the collected data are indexed in *Elasticsearch* in order to allow you to search for a specific text and sort
+the messages by time.
 
 ## Requirements
 
 - Docker
 - Docker Compose
 
-## Installation
+## Installing
 
 Clone the repository:
 ```
@@ -20,7 +30,7 @@ $ git clone git@github.com:Wicker25/whatstrapp.git
 $ cd whatstrapp/
 ```
 
-## Trying it out
+## Usage
 
 Launch the *WhatsTrapp* server with:
 ```
@@ -54,3 +64,11 @@ The *WhatsTrapp*'s architecture consists of a *Puppeteer*, *Puppets*, and *Clien
 - The *Client* is the user interface used by the attacker for performing the hack.
 
 All of the components communicate with each other via *WebSocket*.
+
+## Authors
+
+* Giacomo Trudu - [@Wicker25](https://github.com/Wicker25)
+
+## License
+
+This project is licensed under the GNU General Public License - see the [LICENSE.md](LICENSE.md) file for details.
