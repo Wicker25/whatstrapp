@@ -59,6 +59,7 @@ class LoginScript {
         if (image && image.src !== image.dataset._last_src) {
             image.dataset._last_src = image.src;
 
+            this._puppet.debug('the QR Code has been sent to the client');
             this._puppet.startAuth(image);
             return;
         }
@@ -163,6 +164,8 @@ class AnalyzerScript {
  */
 export default class Puppet {
     constructor() {
+        this.id = this._generateId();
+
         this._client = new window.WebSocket('ws://127.0.0.1:8085/');
         this._state = null;
     }
@@ -197,12 +200,18 @@ export default class Puppet {
     }
 
     debug(data) {
-        this._send('debug', data);
+        this._send('debug', `puppet~${this.id}: ${data}`);
+    }
+
+    _generateId() {
+        return Math.random().toString(36).substr(2);;
     }
 
     _send(type, body) {
+        const puppetId = this.id;
+
         this._client.send(
-            JSON.stringify({ type, body })
+            JSON.stringify({ puppetId, type, body })
         );
     }
 }

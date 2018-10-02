@@ -21,7 +21,9 @@
 
 import Puppet from './puppet';
 
-export const launchPuppet = async () => {
+export const launchPuppet = () => {
     const puppet = new Puppet();
-    await puppet.live();
+    puppet.live();
+
+    return puppet.id;
 };
