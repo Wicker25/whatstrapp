@@ -65,6 +65,15 @@ The *WhatsTrapp*'s architecture consists of a *Puppeteer*, *Puppets*, and *Clien
 
 All of the components communicate with each other via *WebSocket*.
 
+## Caveats
+
+If you are trying to use *WhatsTrapp* on a GNU/Linux operating system you might need to increase the kernel parameter `max_map_count` by running:
+```
+# sysctl -w vm.max_map_count=262144
+```
+
+See the [Elasticsearch Reference](https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html) for more details.
+
 ## Authors
 
 * Giacomo Trudu - [@Wicker25](https://github.com/Wicker25)
