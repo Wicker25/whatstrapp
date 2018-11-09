@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -eo pipefail
+#!/usr/bin/env bash
 
 KIBANA_SETTINGS_FILEPATH='settings/kibana-settings.json'
 
