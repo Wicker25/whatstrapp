@@ -13,7 +13,7 @@ install:
   - docker-compose -f .travis/docker-compose.yml build
 
 before_script:
-  - VERSION=$(grep 'ENV VERSION' ./Dockerfile | awk '{ print $3 }')
+  - export VERSION=$(grep 'ENV VERSION' ./Dockerfile | awk '{ print $3 }')
   - curl -L 'https://github.com/vishnubob/wait-for-it/blob/master/wait-for-it.sh?raw=true' -o .travis/wait-for-it.sh
   - chmod +x .travis/wait-for-it.sh
 

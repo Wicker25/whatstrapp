@@ -1,7 +1,7 @@
 version: '3'
 services:
   whatstrapp:
-    image: wicker25/whatstrapp:latest
+    image: wicker25/whatstrapp:0.1.2
     ports:
       - 8025:8025
       - 8085:8085
