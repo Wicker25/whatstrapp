@@ -1,6 +1,6 @@
 FROM node:8-slim
 
-ENV VERSION 0.1.2
+ENV VERSION 0.1.3
 
 RUN apt-get update && apt-get install -yq libgconf-2-4
 
