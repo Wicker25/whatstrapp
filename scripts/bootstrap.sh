@@ -10,10 +10,10 @@ function wait_for_it {
 }
 
 echo -n "Waiting for Elasticsearch ... "
-wait_for_it $ELASTICSEARCH_URL
+wait_for_it "${ELASTICSEARCH_URL}"
 
 echo -n "Waiting for Kibana ... "
-wait_for_it $KIBANA_URL
+wait_for_it "${KIBANA_URL}"
 
 echo -n "Loading Kibana's settings ... "
 curl \

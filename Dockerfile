@@ -1,5 +1,7 @@
 FROM node:8-slim
 
+ENV VERSION 0.1.1
+
 RUN apt-get update && apt-get install -yq libgconf-2-4
 
 RUN apt-get update && apt-get install -y wget --no-install-recommends \

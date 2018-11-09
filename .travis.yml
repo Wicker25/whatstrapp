@@ -1,5 +1,9 @@
 language: bash
 
+env:
+  global:
+    - IMAGE_NAME='wicker25/whatstrapp'
+
 addons:
   apt:
     packages:
@@ -7,9 +11,9 @@ addons:
 
 install:
   - docker-compose -f .travis/docker-compose.yml build
-  - docker-compose -f .travis/docker-compose.yml pull
 
 before_script:
+  - VERSION=$(grep 'ENV VERSION' ./Dockerfile | awk '{ print $3 }')
   - curl -L 'https://github.com/vishnubob/wait-for-it/blob/master/wait-for-it.sh?raw=true' -o .travis/wait-for-it.sh
   - chmod +x .travis/wait-for-it.sh
 
@@ -22,9 +26,14 @@ after_script:
   - docker-compose -f .travis/docker-compose.yml stop
   - docker-compose -f .travis/docker-compose.yml rm -f
 
+before_deploy:
+  - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+  - docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:${VERSION}"
+  - docker tag "${IMAGE_NAME}" "${IMAGE_NAME}:latest"
+
 deploy:
   skip_cleanup: true
   provider: script
-  script: .travis/docker_push.sh
+  script: .travis/docker-push.sh
   on:
     branch: master
