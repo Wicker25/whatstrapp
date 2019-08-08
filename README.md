@@ -74,6 +74,8 @@ If you are trying to use *WhatsTrapp* on a GNU/Linux operating system you might 
 
 See the [Elasticsearch Reference](https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html) for more details.
 
+If you are trying to use *WhatsTrapp* on Windows but you get the error `Windows named pipe error: ...` check this discussion: https://github.com/Wicker25/whatstrapp/issues/1.
+
 ## Authors
 
 * Giacomo Trudu - [@Wicker25](https://github.com/Wicker25)
