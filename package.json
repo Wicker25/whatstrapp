@@ -7,7 +7,7 @@
     "lodash": "^4.17.10",
     "node-fetch": "^2.2.0",
     "puppeteer": "1.7.0",
-    "ws": "^6.0.0"
+    "ws": "^7.4.6"
   },
   "scripts": {
     "start": "yarn build && ./scripts/bootstrap.sh && node ./app.js",
